@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <link rel="icon" href="../images/logo.png">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <title> Înscrie-te la curs matematic</title>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../index.html"> <img id="logo-link" src="../images/logo-link.png"> </a>
+      <a href="inscrieri.html"> Înscrieri</a>
+      <a href="materiale.html"> Materiale</a>
+    </nav>
+
+  </header>
+
+  <main>
+    <section id="inscrieri-section">
+      <div class="section-div">
+
+
+        <div class="container index-info">
+
+          <h1> Înscrie-te la curs</h1>
+
+          <h2> Descoperă lumea fascinantă </h2>
+
+
+        </div>
+      </div>
+
+    </section>
+
+    <section class="container">
+
+      <h1> Iești pe calea cea dreaptă </h1>
+
+      <div class="inscrieri-info">
+        <div class="card-inscrieri">
+
+          <h2> Profesorul cursului </h2>
+
+          <div class="profesor">
+            <img src="../images/image_eu.jpg">
+            <p>
+              Profesoara acestui curs este Ganenco Tatiana, profesoară de matematică și informatică. Cu experiență de
+              peste 20 ani . În dezvoltare produselor software
+            </p>
+
+          </div>
+          <br/> 
+           <b> Specialitatea: </b> <span> Informatica </span> <br/>
+           <b>E-mail: </b> <a href="mailto:taneaganenco@gmail.com"> taneaganenco@gmail.com  </a>
+
+
+        </div>
+
+        <div class="card-inscrieri">
+
+          <h2> Completează formularul </h2>
+          
+          <form id="formular"  method="post" action="https://sheetdb.io/api/v1/gqrhkqzjepc1g"> 
+            <label for="nume"> Nume, Prenume</label>
+            <input class="input-form" id="nume" name="data[nume]" type="text">
+
+            <label for="email"> Email</label>
+            <input class="input-form" id="email" name="data[email]" type="email">
+
+           <label> Clasa </label>
+         <br/>
+       <select class="select-form" name="data[clasa]" > 
+        <option value="V"> V </option>
+        <option value="VI">  VI  </option>
+        <option value="VII"> VII </option>
+        <option value="VIII"> VIII </option>
+        <option value="IX"> IX  </option>
+       </select> 
+
+        <input type="submit" value="Transmite"  id="transmite">
+       
+         
+          </form>
+        </div>
+
+      </div>
+      <div > <h2> Ai o întrebare ? </h2>
+      <div class="fb-comments" data-href="http://tekwil.online/ganenco-tatiana"  data-numpost="5" data-width="100%"  data-order-by="reverst_time"> </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <h3> Ganenco Tatiana -2024 © </h3>
+  </footer>
+
+  <script scr="../js/main.js"></script>
+  <script>  
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk')); 
+var form = document.getElementById('formular');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("formular")),
+            }).then(() =>{
+                alert("Multumesc !");
+                form.reset();
+            });
+        });
+</script>
+</body>
+
+</html>
